@@ -1,69 +1,79 @@
 #! /usr/bin/python
 # python script to generate random multiplication tables 
+"""
+Multiplication table generator
+"""
+
 
 import random
 
 #This function randomizes and returns a list of twelve values from 1-12.
-def ArrayOfTwelve():
-    ReferenceTwelve=[1,2,3,4,5,6,7,8,9,10,11,12]
-    NewTwelve=[]
-    while len(ReferenceTwelve) > 0:
-        DerpNumber=random.randrange(13)
-        if DerpNumber not in NewTwelve and DerpNumber in ReferenceTwelve:
-            NewTwelve.append(DerpNumber)
-            ReferenceTwelve.remove(DerpNumber)
-    return NewTwelve
+def arrayoftwelve():
+    """makes a list of 12 random numbers"""
+    referencetwelve = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    newtwelve = []
+    while len(referencetwelve) > 0:
+        derpnumber = random.randrange(13)
+        if derpnumber not in newtwelve and derpnumber in referencetwelve:
+            newtwelve.append(derpnumber)
+            referencetwelve.remove(derpnumber)
+    return newtwelve
 
 #this function takes in two lists and outputs a proper 2d list 
-def TwoDTwelves(f, s):
-    FinalGrid = [[] for _ in range(14)]
-    FinalGrid[0]=['X',s[0],s[1],s[2],s[3],s[4],s[5],s[6],s[7],s[8],s[9],s[10],s[11],'X']
-    FinalGrid[1]=[f[0],'','','','','','','','','','','','',f[0]]
-    FinalGrid[2]=[f[1],'','','','','','','','','','','','',f[1]]
-    FinalGrid[3]=[f[2],'','','','','','','','','','','','',f[2]]
-    FinalGrid[4]=[f[3],'','','','','','','','','','','','',f[3]]
-    FinalGrid[5]=[f[4],'','','','','','','','','','','','',f[4]]
-    FinalGrid[6]=[f[5],'','','','','','','','','','','','',f[5]]
-    FinalGrid[7]=[f[6],'','','','','','','','','','','','',f[6]]
-    FinalGrid[8]=[f[7],'','','','','','','','','','','','',f[7]]
-    FinalGrid[9]=[f[8],'','','','','','','','','','','','',f[8]]
-    FinalGrid[10]=[f[9],'','','','','','','','','','','','',f[9]]
-    FinalGrid[11]=[f[10],'','','','','','','','','','','','',f[10]]
-    FinalGrid[12]=[f[11],'','','','','','','','','','','','',f[11]]
-    FinalGrid[13]=['X',s[0],s[1],s[2],s[3],s[4],s[5],s[6],s[7],s[8],s[9],s[10],s[11],'X']
-    return FinalGrid
+def twodtwelves(fir, sec):
+    """arranges a 2d list based on 2 1d lists"""	
+    finalgrid = [[] for _ in range(14)]
+    finalgrid[0] = ['X', sec[0], sec[1], sec[2], sec[3], sec[4], sec[5], sec[6], sec[7], sec[8], sec[9], sec[10], sec[11], 'X']
+    finalgrid[1] = [fir[0], '', '', '', '', '', '', '', '', '', '', '', '', fir[0]]
+    finalgrid[2] = [fir[1], '', '', '', '', '', '', '', '', '', '', '', '', fir[1]]
+    finalgrid[3] = [fir[2], '', '', '', '', '', '', '', '', '', '', '', '', fir[2]]
+    finalgrid[4] = [fir[3], '', '', '', '', '', '', '', '', '', '', '', '', fir[3]]
+    finalgrid[5] = [fir[4], '', '', '', '', '', '', '', '', '', '', '', '', fir[4]]
+    finalgrid[6] = [fir[5], '', '', '', '', '', '', '', '', '', '', '', '', fir[5]]
+    finalgrid[7] = [fir[6], '', '', '', '', '', '', '', '', '', '', '', '', fir[6]]
+    finalgrid[8] = [fir[7], '', '', '', '', '', '', '', '', '', '', '', '', fir[7]]
+    finalgrid[9] = [fir[8], '', '', '', '', '', '', '', '', '', '', '', '', fir[8]]
+    finalgrid[10] = [fir[9], '', '', '', '', '', '', '', '', '', '', '', '', fir[9]]
+    finalgrid[11] = [fir[10], '', '', '', '', '', '', '', '', '', '', '', '', fir[10]]
+    finalgrid[12] = [fir[11], '', '', '', '', '', '', '', '', '', '', '', '', fir[11]]
+    finalgrid[13] = ['X', sec[0], sec[1], sec[2], sec[3], sec[4], sec[5], sec[6], sec[7], sec[8], sec[9], sec[10], sec[11], 'X']
+    return finalgrid
 
-def maxItemLength(a):
-    maxLen = 0
-    rows = len(a)
-    cols = len(a[0])
+def maxitemlength(inputlist):
+    """ Max item length """	
+    maxlen = 0
+    rows = len(inputlist)
+    cols = len(inputlist[0])
     for row in xrange(rows):
         for col in xrange(cols):
-            maxLen = max(maxLen, len(str(a[row][col])))
-    return maxLen
+            maxlen = max(maxlen, len(str(inputlist[row][col])))
+    return maxlen
 
-def PrintGrid(InputGrid):
-  if (InputGrid == []):
-  # So we don't crash accessing a[0]
-    print []
-    return
-  rows = len(InputGrid)
-  cols = len(InputGrid[0])
-  fieldWidth = maxItemLength(InputGrid)
-  print "  ",
-  for row in xrange(rows):
-    if (row > 0): 
-      print "\n  ",
-    for col in xrange(cols):
-        if (col > 0): print " ",
-        format = "%" + str(fieldWidth) + "s"
-        print format % str(InputGrid[row][col]),
+def printgrid(inputgrid):
+    """ Printing the grid """
+    if (inputgrid == []):
+    # So we don't crash accessing a[0]
+        print []
+        return
+    rows = len(inputgrid)
+    cols = len(inputgrid[0])
+    fieldwidth = maxitemlength(inputgrid)
+    print "  ",
+    for row in xrange(rows):
+        if (row > 0): 
+            print "\n  ",
+        for col in xrange(cols):
+            if (col > 0): 
+                print " ",
+            format1 = "%" + str(fieldwidth) + "s"
+            print format1 % str(inputgrid[row][col]),
 
 def main():
-  Columns=ArrayOfTwelve()
-  Rows=ArrayOfTwelve()
-  Grid=TwoDTwelves(Columns, Rows) 
-  PrintGrid(Grid)
+    """The Heavy Lifting"""
+    columns = arrayoftwelve()
+    rows = arrayoftwelve()
+    grid = twodtwelves(columns, rows) 
+    printgrid(grid)
 
-if __name__ == "__main__":
-	main()
+if __name__ ==  "__main__":
+    main()
