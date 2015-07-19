@@ -23,20 +23,34 @@ def arrayoftwelve():
 def twodtwelves(fir, sec):
     """arranges a 2d list based on 2 1d lists"""	
     finalgrid = [[] for _ in range(14)]
-    finalgrid[0] = ['X', sec[0], sec[1], sec[2], sec[3], sec[4], sec[5], sec[6], sec[7], sec[8], sec[9], sec[10], sec[11], 'X']
-    finalgrid[1] = [fir[0], '', '', '', '', '', '', '', '', '', '', '', '', fir[0]]
-    finalgrid[2] = [fir[1], '', '', '', '', '', '', '', '', '', '', '', '', fir[1]]
-    finalgrid[3] = [fir[2], '', '', '', '', '', '', '', '', '', '', '', '', fir[2]]
-    finalgrid[4] = [fir[3], '', '', '', '', '', '', '', '', '', '', '', '', fir[3]]
-    finalgrid[5] = [fir[4], '', '', '', '', '', '', '', '', '', '', '', '', fir[4]]
-    finalgrid[6] = [fir[5], '', '', '', '', '', '', '', '', '', '', '', '', fir[5]]
-    finalgrid[7] = [fir[6], '', '', '', '', '', '', '', '', '', '', '', '', fir[6]]
-    finalgrid[8] = [fir[7], '', '', '', '', '', '', '', '', '', '', '', '', fir[7]]
-    finalgrid[9] = [fir[8], '', '', '', '', '', '', '', '', '', '', '', '', fir[8]]
-    finalgrid[10] = [fir[9], '', '', '', '', '', '', '', '', '', '', '', '', fir[9]]
-    finalgrid[11] = [fir[10], '', '', '', '', '', '', '', '', '', '', '', '', fir[10]]
-    finalgrid[12] = [fir[11], '', '', '', '', '', '', '', '', '', '', '', '', fir[11]]
-    finalgrid[13] = ['X', sec[0], sec[1], sec[2], sec[3], sec[4], sec[5], sec[6], sec[7], sec[8], sec[9], sec[10], sec[11], 'X']
+    finalgrid[0] = ['X', sec[0], sec[1], sec[2], sec[3], sec[4], \
+		    sec[5], sec[6], sec[7], sec[8], sec[9], sec[10], sec[11], 'X']
+    finalgrid[1] = [fir[0], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[0]]
+    finalgrid[2] = [fir[1], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[1]]
+    finalgrid[3] = [fir[2], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[2]]
+    finalgrid[4] = [fir[3], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[3]]
+    finalgrid[5] = [fir[4], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[4]]
+    finalgrid[6] = [fir[5], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[5]]
+    finalgrid[7] = [fir[6], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[6]]
+    finalgrid[8] = [fir[7], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[7]]
+    finalgrid[9] = [fir[8], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[8]]
+    finalgrid[10] = [fir[9], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[9]]
+    finalgrid[11] = [fir[10], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[10]]
+    finalgrid[12] = [fir[11], '', '', '', '', '', \
+		    '', '', '', '', '', '', '', fir[11]]
+    finalgrid[13] = ['X', sec[0], sec[1], sec[2], sec[3], sec[4], \
+		    sec[5], sec[6], sec[7], sec[8], sec[9], sec[10], sec[11], 'X']
     return finalgrid
 
 def maxitemlength(inputlist):
