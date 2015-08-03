@@ -106,6 +106,7 @@ def printdivision():
         result = firstnum * secondnum
         dividend.append(result)
         divisor.append(secondnum)
+        count += 1
     dividendcols = len(dividend) 
     divisorcols = len(divisor) 
     fieldwidth = 3
@@ -115,7 +116,6 @@ def printdivision():
     print ""
     for d2col in xrange(divisorcols):
         print format1 % str(divisor[d2col]),
-        count += 1
 
 def main():
     """The Heavy Lifting"""
@@ -125,6 +125,8 @@ def main():
     printgrid(grid)
     print "\n"
     printdivision()    
+    print "\n"
+    printdivision()
 
 
 if __name__ ==  "__main__":
