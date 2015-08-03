@@ -63,6 +63,15 @@ def maxitemlength(inputlist):
             maxlen = max(maxlen, len(str(inputlist[row][col])))
     return maxlen
 
+def maxitemlenlist(input1dlist):
+    """ Max item length for 1d list"""
+    max1dlen = 0
+    rows = len(input1dlist)
+    for row in xrange(rows):
+        max1dlen = max(max1dlen, len(str(input1dlist[row])))
+    return max1dlen
+
+
 def printgrid(inputgrid):
     """ Printing the grid """
     if (inputgrid == []):
@@ -82,12 +91,41 @@ def printgrid(inputgrid):
             format1 = "%" + str(fieldwidth) + "s"
             print format1 % str(inputgrid[row][col]),
 
+def printdivision():
+    """ Printing some random divison problems"""
+    dividend = []
+    divisor = []
+    count = 0
+    while (count < 30):
+        firstnum = random.randrange(13)
+        while (firstnum in (0, 1, 2, 5, 10)):
+            firstnum = random.randrange(13)
+        secondnum = random.randrange(13)
+        while (secondnum in (0, 1, 2, 5, 10)):
+            secondnum = random.randrange(13)
+        result = firstnum * secondnum
+        dividend.append(result)
+        divisor.append(secondnum)
+    dividendcols = len(dividend) 
+    divisorcols = len(divisor) 
+    fieldwidth = 3
+    for d1col in xrange(dividendcols):
+        format1 = "%" + str(fieldwidth) + "s"
+        print format1 % str(dividend[d1col]), 
+    print ""
+    for d2col in xrange(divisorcols):
+        print format1 % str(divisor[d2col]),
+        count += 1
+
 def main():
     """The Heavy Lifting"""
     columns = arrayoftwelve()
     rows = arrayoftwelve()
     grid = twodtwelves(columns, rows) 
     printgrid(grid)
+    print "\n"
+    printdivision()    
+
 
 if __name__ ==  "__main__":
     main()
